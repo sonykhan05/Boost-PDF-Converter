@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoDo PDF Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- Custom Modal -->
+    <div id="customModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-exclamation-circle"></i>
+                <h3>Confirm Action</h3>
+            </div>
+            <div class="modal-body">
+                <p>This will clear all current images. Would you like to continue?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="modalCancelBtn" class="modal-btn cancel-btn">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+                <button id="modalConfirmBtn" class="modal-btn confirm-btn">
+                    <i class="fas fa-check"></i> Continue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <i class="fas fa-file-pdf"></i>
+                <h1>Boost PDF Converter</h1>
+            </div>
+            <p>Convert your images to PDF easily and quickly</p>
+        </header>
+
+        <div class="main-content">
+            <div class="upload-section">
+                <div class="upload-box" id="dropZone">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Drag & Drop Images Here</h3>
+                    <p class="upload-text">OR</p>
+                    <input type="file" id="fileInput" multiple accept="image/*" hidden>
+                    <button class="select-btn" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-images"></i> Select Images
+                    </button>
+                    <p class="support-text">Supports: JPG, PNG, GIF (Max 20MB per image)</p>
+                </div>
+            </div>
+
+            <div class="preview-section" id="previewSection">
+                <div class="preview-header">
+                    <h2><i class="fas fa-images"></i> Selected Images</h2>
+                    <div class="preview-controls">
+                        <button id="clearAll" class="clear-btn" disabled>
+                            <i class="fas fa-trash-alt"></i> Clear All
+                        </button>
+                        <span class="image-count">0 images selected</span>
+                    </div>
+                </div>
+                <div class="image-grid" id="imageGrid"></div>
+            </div>
+
+            <div class="controls">
+                <div class="buttons-container">
+                    <button id="convertBtn" class="convert-btn" disabled>
+                        <i class="fas fa-file-pdf"></i> Convert to PDF
+                    </button>
+                    <button id="newPdfBtn" class="new-pdf-btn">
+                        <i class="fas fa-plus"></i> Generate New PDF
+                    </button>
+                </div>
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" id="progressBarFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Processing images...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Fast Conversion</h3>
+                <p>Convert multiple images instantly</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-lock"></i>
+                <h3>Secure</h3>
+                <p>100% private, files processed locally</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Responsive</h3>
+                <p>Works on all devices</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Boost PDF Converter. BoostLink Network.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
